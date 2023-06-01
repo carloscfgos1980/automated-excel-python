@@ -40,7 +40,7 @@ ws = wb.active
 ws.title = "Grades"
 
 
-# I just graps one of the hey from the data dictionary
+# I just graps one of the key from the data dictionary
 headings = ['Name'] + list(data['Joe'].keys())
 ws.append(headings)
 
@@ -55,10 +55,10 @@ for col in range(2, len(data['Joe']) + 2):
     ws[char + "7"] = f"=SUM({char + '2'}:{char + '6'})/{len(data)}"
 # [char + "7"] is where the results are going to be shown
 
-ws["A7"] = 'average'
+ws["A7"] = 'Average'
 
 # Change the color of the first row
 for col in range(1, 6):
-    ws[get_column_letter(col) + '1'].font = Font(bold=True, color="0099CCFF")
+    ws[get_column_letter(col) + '1'].font = Font(bold=True, color="00FF0000")
 
 wb.save("NewGrades.xlsx")
